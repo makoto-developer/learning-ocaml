@@ -56,13 +56,16 @@
 
 # Version
 
-- 最新 -> `5.1.0`
-- LTS -> `4.14.1`
+v5系は実験的機能で多数の機能変更を含んでいる。潜在的なバグを含んでいる可能性がある。
 
-# なぜ関数型プログラミングなのか
+実際利用する場合は`v4.14`系のバージョンを使うことをおすすめする。
 
-- 関数を組み合わせることでアプリケーションを実装できる
-- イミュータブルな小さな純粋関数で実装すると、引数と結果が必ず一致してテストしやすくなる。可読性が向上する。
+- 最新 -> `5.1.1`
+- LTS -> `4.14.0`
+
+リリーされているバージョンの一覧
+
+https://ocaml.org/releases
 
 # インストール方法
 
@@ -230,7 +233,7 @@ let pi = 3.14;;
 
 ```ocaml
 (*
-    let 変数名 = 値 in 式
+    let 変数名 引数 = 値 in 式
 *)
 
 # let circleLength radian =
@@ -355,7 +358,22 @@ val a : int ref = {contents = 0}
 - : int = 13
 ```
 
+リストの結合
+
+`::`キーワードを使う
+
 ```ocaml
+# let list = [1; 2; 3; 4;];;
+val list : int list = [1; 2; 3; 4]
+# let list = 10 :: list;;
+val list : int list = [10; 1; 2; 3; 4]
+
+```
+
+`if`式
+
+```ocaml
+
 ```
 
 ```ocaml
@@ -370,6 +388,10 @@ val a : int ref = {contents = 0}
 ```ocaml
 ```
 
-```ocaml
-```
 
+# Web API Serverを作る
+
+ライブラリがあるはず。一説によればOCaml界隈では`dream`がシンプルなインターフェースでよく採用されているらしい。
+
+- https://aantron.github.io/dream/
+- https://jsthomas.github.io/ocaml-dream-api.html
