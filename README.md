@@ -62,6 +62,16 @@ val quicksort : 'a list -> 'a list = <fun>
 - : int list = [1; 3; 4; 5]
 ```
 
+コメント
+
+```ocaml
+(*
+    ブロックコメント
+    ブロックコメント
+    ブロックコメント
+*)
+```
+
 足し算
 
 ```ocaml
@@ -95,6 +105,8 @@ val name : string = "makoto-developer"
 
 関数その2
 
+`^`演算子で文字列を結合できる
+
 ```ocaml
 # let greeting = fun name -> "Hi " ^ name ^ "!";;
 val greeting : string -> string = <fun>
@@ -102,13 +114,74 @@ val greeting : string -> string = <fun>
 - : string = "Hi makoto-developer!"
 ```
 
-```ocaml
-```
+データ型
+
+|type|name|example|note|
+|:---|:---|:---|:---|
+|int|整数|`1;;`|32bit/64bitで最大値が変わる。`max_int`、`min_int`で確認できる|
+|float|実数|`3.1415;;`|`max_float`、`min_float`で確認できる|
+|char|1文字(半角英数字(ASCIIコード))|`'a';;`||
+|string|文字列|`"abcde";;`||
+|bool||||
+
+演算子
+
+|operator|sample|note|
+|:---|:---|:---|
+|`+` `-` `*` `/`|`1+2;;`|整数の場合|
+|`+.` `-.` `*.` `/.`|`1.1 +. 2.2;;`|実数の場合|
+|`<(=<)` `>(=>)` `=` `<>` `&&` `||` `not`|not (5 >= 10)|比較|
+
+関数その3
+
+関数式の書き方
+(関数名は小文字の英字から開始する必要がある)
 
 ```ocaml
+(*
+  let 関数名 引数 = 式
+*)
+
+# let addSum v1 v2 = v1 + v2;;
+val addSum : int -> int -> int = <fun>
+# addSum 10 19;;
+- : int = 29
+#
 ```
 
+グローバル変数
+
+- グローバル変数は関数の外で定義された変数です。
+- 寿命としては宣言された位置からそのソースの終端までとなります。
+- 対話式コンパイラで「#」の次の位置から宣言した変数はグローバル変数として扱われます。
+
 ```ocaml
+(*
+    let 変数名 = 値
+*)
+
+let pi = 3.14;;
+```
+
+ローカル変数
+
+- ローカル変数は関数内で宣言された変数
+- 寿命は宣言した位置からその関数の終端まで使用することができます。
+- 書式は宣言の後ろに「in」と「式」を記述します。
+- 数を宣言したい場合は式の後ろに更に「in」と「式」を追加します。
+
+```ocaml
+(*
+    let 変数名 = 値 in 式
+*)
+
+# let circleLength radian =
+    let pi = 3.14 in
+    let diameter = 2.0 *. pi in
+    diameter *. radian;;
+val circleLength : float -> float = <fun>
+# circleLength 10.0;;
+- : float = 62.8000000000000043
 ```
 
 ```ocaml
