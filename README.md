@@ -174,7 +174,7 @@ val greeting : string -> string = <fun>
 |:---|:---|:---|:---|
 |int|整数|`1;;`|32bit/64bitで最大値が変わる。`max_int`、`min_int`で確認できる|
 |float|実数|`3.1415;;`|`max_float`、`min_float`で確認できる|
-|char|1文字(半角英数字(ASCIIコード))|`'a';;`||
+|char|1文字|`'a';;`|半角英数字(ASCIIコード)|
 |string|文字列|`"abcde";;`||
 |bool|bool型|`let is_check = true`||
 |uint|???(型名が不明)|`();;`|voidと同じ意味|
