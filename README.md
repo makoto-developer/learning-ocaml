@@ -388,7 +388,7 @@ val list : int list = [10; 1; 2; 3; 4]
 `if`式
 
 ```ocaml
-
+let max a b = if a > b then a else b;;
 ```
 
 多相型と型推論
@@ -408,7 +408,7 @@ val your_name : string -> string = <fun>
 
 ループは再帰で実装
 
-`let rec`で関数を定義する
+`let rec`キーワードで関数を定義する
 
 ```ocaml
 (** 最大公約数を割り出す *)
@@ -419,15 +419,30 @@ let rec gcd (a, b) =
 標準入力を使う
 
 ```ocaml
-:q
-;
 (** 数値*)
 read_int() ;;
+
 (** 文字列*)
 read_line() ;;
 ```
 
+数値 -> 文字列 (`format_int`)
+実数 -> 文字列 (`format_float`)
+
+
+# 実装を練習
+
+1からNまでの連番のリストを作成
+
 ```ocaml
+# let rec range a b =
+  	if a > b then []
+  	else a :: range (a + 1) b;;
+val range : int -> int -> int list = <fun>
+# range 1 5;;
+- : int list = [1; 2; 3; 4; 5]
+# range 4 8;;
+- : int list = [4; 5; 6; 7; 8]
 ```
 
 ```ocaml
@@ -448,7 +463,7 @@ asdf plugin add opam
 asdf install opam 2.1.5
 ```
 
-チュートリアルを見ながらやる
+チュートリアルを見ながら実装する
 
 https://github.com/aantron/dream/tree/master/example/1-hello#files
 
