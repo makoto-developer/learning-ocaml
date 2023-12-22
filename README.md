@@ -469,7 +469,10 @@ https://github.com/aantron/dream/tree/master/example/1-hello#files
 
 # Jupyter Notebook
 
+<< 編集途中 >>
+
 ```shell
+poetry run jupyter kernelspec install --name "ocaml-jupyter-$(opam var switch)" "$(opam var share)/jupyter"
 poetry install
 history
 ll
@@ -490,3 +493,4 @@ asdf plugin-add python
 idea .
 cd learning_standard_ml/
 ```
+
