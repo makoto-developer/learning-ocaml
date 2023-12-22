@@ -467,3 +467,26 @@ asdf install opam 2.1.5
 
 https://github.com/aantron/dream/tree/master/example/1-hello#files
 
+# Jupyter Notebook
+
+```shell
+poetry install
+history
+ll
+poetry run jupyter lab
+poetry add jupyterlab
+poetry init
+
+asdf local poetry 1.7.1
+poetry --version
+asdf install poetry latest
+
+asdf plugin-add poetry
+asdf local python 3.12.1
+asdf list
+asdf install python latest
+asdf list all python
+asdf plugin-add python
+idea .
+cd learning_standard_ml/
+```
