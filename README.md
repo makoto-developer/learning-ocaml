@@ -8,6 +8,8 @@
 # Ocamlとは
 
 ## 公式サイト
+
+- https://ocaml.jp/
 - https://ocaml.org/
 - https://caml.inria.fr/
 
@@ -493,4 +495,12 @@ asdf plugin-add python
 idea .
 cd learning_standard_ml/
 ```
+
+# OCamlに内蔵されている標準モジュールの一覧
+
+https://ocaml.jp/archive/ocaml-manual-3.06-ja/manual034.html
+
+# References
+
+- https://zenn.dev/hiramekun/scraps/9546838b7a08c3
 
