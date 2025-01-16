@@ -32,13 +32,7 @@
 強い静的型付け
 
 - Haskellと同等もしくはHaskell以上に
-- C, C++, Javaと比較して速く、エラーを起こしにくい
-- テストではかなり見つけにくいようなバグを事前に発見できる
-
-命令型, オブジェクト指向を備えている
-
-- 関数型だけでなく、命令型、およびオブジェクト指向のプログラミング スタイルをサポート
-
+- C, C++, Javaと比較して速く、エラーを起こしにくい テストではかなり見つけにくいようなバグを事前に発見できる 命令型, オブジェクト指向を備えている 関数型だけでなく、命令型、およびオブジェクト指向のプログラミング スタイルをサポート
 関数型
 
 - 代数データ型とパターンマッチング
@@ -486,14 +480,60 @@ asdf local poetry 1.7.1
 poetry --version
 asdf install poetry latest
 
-asdf plugin-add poetry
 asdf local python 3.12.1
-asdf list
 asdf install python latest
 asdf list all python
-asdf plugin-add python
 idea .
 cd learning_standard_ml/
+
+---
+asdf plugin-add python
+asdf plugin-add poetry
+asdf install python latest
+asdf install poetry latest
+asdf global python latest
+asdf global poetry latest
+poetry --version
+```
+
+うまく行った時のpoetry installのログ(python v13はダメみたい)
+```shell
+asdf install poetry latest                                                                                                                                                                               00:38:27
+Retrieving Poetry metadata
+
+# Welcome to Poetry!
+
+This will download and install the latest version of Poetry,
+a dependency and package manager for Python.
+
+It will add the `poetry` command to Poetry's bin directory, located at:
+
+/Users/user/.asdf/installs/poetry/2.0.1/bin
+
+You can uninstall at any time by executing this script with the --uninstall option,
+and these changes will be reverted.
+
+Installing Poetry (2.0.1): Creating environment
+Installing Poetry (2.0.1): Done
+
+Poetry (2.0.1) is installed now. Great!
+
+To get started you need Poetry's bin directory (/Users/user/.asdf/installs/poetry/2.0.1/bin) in your `PATH`
+environment variable.
+
+Add `export PATH="/Users/user/.asdf/installs/poetry/2.0.1/bin:$PATH"` to your shell configuration file.
+
+Alternatively, you can call Poetry explicitly with `/Users/user/.asdf/installs/poetry/2.0.1/bin/poetry`.
+
+You can test that everything is set up by executing:
+
+`poetry --version`
+
+Configuring poetry to behave properly with asdf ...
+Running: "poetry config virtualenvs.use-poetry-python false".
+
+asdf: Warn: You have configured asdf to preserve downloaded files (with always_keep_download=yes or --keep-download). But
+asdf: Warn: the current plugin (poetry) does not support that. Downloaded files will not be preserved.
 ```
 
 # OCamlに内蔵されている標準モジュールの一覧
